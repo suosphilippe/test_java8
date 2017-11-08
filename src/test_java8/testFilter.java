@@ -11,11 +11,14 @@ public class testFilter {
 		 
 		 List<String> lines = Arrays.asList("a", "b", "c");
 
-		 List<String> result = lines.stream()                
-	                .filter(line -> !"c".equals(line))     
-	                .collect(Collectors.toList());
+		 List<String> result = lines.stream()         // conversion de list en stream        
+	                .filter(line -> !"c".equals(line))     // exclusion de c
+	                .collect(Collectors.toList()); // recuperer le resultat et le convertir en list
 		 
-		 result.forEach(System.out::println);
+		 result.forEach(System.out::println); // afficher le resultat
+		 
+		 
+		 
 		 
 	    }
 
