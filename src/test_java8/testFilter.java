@@ -3,26 +3,23 @@ package test_java8;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class testFilter {
 
 	 public static void main(String[] args) {
+		 
+		 List<String> lines = Arrays.asList("a", "b", "c");
 
-	        List<String> lines = Arrays.asList("a", "b", "c");
-	        List<String> result = getFilterOutput(lines, "c");
-	        for (String temp : result) {
-	            System.out.println(temp);
-	        }
-
+		 List<String> result = lines.stream()                
+	                .filter(line -> !"c".equals(line))     
+	                .collect(Collectors.toList());
+		 
+		 for(String item : result) {
+			 System.out.println(item);
+		 }
+		 
+		 
 	    }
 
-	    private static List<String> getFilterOutput(List<String> lines, String filter) {
-	        List<String> result = new ArrayList<>();
-	        for (String line : lines) {
-	            if (!"c".equals(line)) {
-	                result.add(line);
-	            }
-	        }
-	        return result;
-	    }
 }
