@@ -10,9 +10,7 @@ public class testfForEach {
 
 		List<String> items = Arrays.asList("A", "B", "C", "D", "E");
 
-		for(String item : items){
-			System.out.println(item);
-		}
+		items.forEach(System.out::println);
 
 	}
 

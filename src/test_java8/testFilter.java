@@ -15,10 +15,7 @@ public class testFilter {
 	                .filter(line -> !"c".equals(line))     
 	                .collect(Collectors.toList());
 		 
-		 for(String item : result) {
-			 System.out.println(item);
-		 }
-		 
+		 result.forEach(System.out::println);
 		 
 	    }
 
